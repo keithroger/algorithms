@@ -1,4 +1,4 @@
-package linkedlists
+package linked
 
 type Stack struct {
 	first *node

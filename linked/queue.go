@@ -1,4 +1,4 @@
-package linkedlists
+package linked
 
 type Queue struct {
 	first, last *node

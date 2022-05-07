@@ -1,4 +1,4 @@
-package linkedlists
+package linked
 
 type node struct {
 	item int

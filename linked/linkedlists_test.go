@@ -1,10 +1,10 @@
-package linkedlists_test
+package linked_test
 
 import (
 	"reflect"
 	"testing"
 
-	"github.com/keithroger/algorithms/linkedlists"
+	"github.com/keithroger/algorithms/linked"
 )
 
 type testcase struct {
@@ -15,7 +15,7 @@ type testcase struct {
 func TestStack(t *testing.T) {
 	tc := testcase{[]int{1, 2, 3, 4}, []int{4, 3, 2, 1}}
 
-	stack := linkedlists.Stack{}
+	stack := linked.Stack{}
 	for _, item := range tc.items {
 		stack.Push(item)
 	}
@@ -33,7 +33,7 @@ func TestStack(t *testing.T) {
 func TestQueue(t *testing.T) {
 	tc := testcase{[]int{1, 2, 3, 4}, []int{1, 2, 3, 4}}
 
-	queue := linkedlists.Queue{}
+	queue := linked.Queue{}
 	for _, item := range tc.items {
 		queue.Enqueue(item)
 	}
