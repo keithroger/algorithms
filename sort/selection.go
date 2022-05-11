@@ -1,6 +1,6 @@
 package sort
 
-func SelectionSort(arr []int) {
+func Selection(arr []int) {
 	n := len(arr)
 	for i := 0; i < n; i++ {
 		min := i
@@ -8,7 +8,7 @@ func SelectionSort(arr []int) {
 			if arr[j] < arr[min] {
 				min = j
 			}
-			arr[i], arr[j] = arr[j], arr[i]
 		}
+		arr[i], arr[min] = arr[min], arr[i]
 	}
 }

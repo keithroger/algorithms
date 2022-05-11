@@ -1,34 +1,59 @@
 package sort_test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/keithroger/algorithms/sort"
 )
 
-func TestSorts(t *testing.T) {
-	arr := []int{5, 4, 3, 2, 1}
-	tt := []struct {
+var (
+	arrs = []struct {
+		name string
+		nums []int
+	}{
+		{"Ascending", []int{1, 2, 3, 4}},
+		{"Descending", []int{4, 3, 2, 1}},
+		{"Empty", []int{}},
+		{"OddCount", []int{0, 1, 2}},
+		{"Negatives", []int{-5, -2, -1, -3}},
+		{"Repeats", []int{2, 2, 1, 2, 3, 4}},
+		{"Uniform", []int{3, 3, 3, 3, 3, 3}},
+		{"Random1", []int{-10, 10, -20, 3, 4, 2}},
+		{"Random2", []int{-30, 2, 3, -40, 5, 100, -200}},
+		{"Random3", []int{20, 2, 4, -2, -3, -5, -1, -5}},
+	}
+
+	sorts = []struct {
 		name string
 		sort func([]int)
 	}{
-		{"SelectionSort", sort.SelectionSort},
-		{"InsertionSort", sort.InsertionSort},
+		{"SelectionSort", sort.Selection},
+		{"InsertionSort", sort.Insertion},
+		{"MergeSort", sort.Merge},
+		{"MergeSort2", sort.Merge2},
 	}
+)
 
-	for _, tc := range tt {
-		tc := tc // make a copy to be parallel friendly
+func TestSorts(t *testing.T) {
 
-		t.Run(tc.name, func(t *testing.T) {
-			t.Parallel()
+	for _, s := range sorts {
+		for _, arr := range arrs {
+			s := s // make a copy to be parallel friendly
+			nums := make([]int, len(arr.nums))
+			copy(nums, arr.nums)
 
-			arr := arr // make a copy to pass to by referance
-			tc.sort(arr)
+			name := fmt.Sprintf("%s_%s", s.name, arr.name)
+			t.Run(name, func(t *testing.T) {
+				t.Parallel()
 
-			if !isSorted(arr) {
-				t.Error("Out of order")
-			}
-		})
+				s.sort(nums)
+
+				if !isSorted(nums) {
+					t.Errorf("%s out of order\nGot: %v", name, nums)
+				}
+			})
+		}
 	}
 }
 
