@@ -32,6 +32,7 @@ var (
 		{"InsertionSort", sort.Insertion},
 		{"MergeSort", sort.Merge},
 		{"MergeSort2", sort.Merge2},
+		{"ShellSort", sort.Shell},
 	}
 )
 
