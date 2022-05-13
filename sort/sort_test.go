@@ -2,6 +2,8 @@ package sort_test
 
 import (
 	"fmt"
+	"math/rand"
+	"sort"
 	"testing"
 
 	"github.com/keithroger/algorithms/sort"
@@ -23,8 +25,10 @@ var (
 		{"Random2", []int{-30, 2, 3, -40, 5, 100, -200}},
 		{"Random3", []int{20, 2, 4, -2, -3, -5, -1, -5}},
 	}
+)
 
-	sorts = []struct {
+func TestSorts(t *testing.T) {
+	sorts := []struct {
 		name string
 		sort func([]int)
 	}{
@@ -33,10 +37,10 @@ var (
 		{"MergeSort", sort.Merge},
 		{"MergeSort2", sort.Merge2},
 		{"ShellSort", sort.Shell},
+		// {"QuickSort", sort.Quick},
 	}
-)
 
-func TestSorts(t *testing.T) {
+	rand.Seed(1984)
 
 	for _, s := range sorts {
 		for _, arr := range arrs {
@@ -46,8 +50,9 @@ func TestSorts(t *testing.T) {
 
 			name := fmt.Sprintf("%s_%s", s.name, arr.name)
 			t.Run(name, func(t *testing.T) {
-				t.Parallel()
+				// t.Parallel()
 
+				fmt.Println(name)
 				s.sort(nums)
 
 				if !isSorted(nums) {
