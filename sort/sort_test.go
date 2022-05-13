@@ -3,7 +3,6 @@ package sort_test
 import (
 	"fmt"
 	"math/rand"
-	"sort"
 	"testing"
 
 	"github.com/keithroger/algorithms/sort"
