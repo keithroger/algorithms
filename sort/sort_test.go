@@ -37,6 +37,7 @@ func TestSorts(t *testing.T) {
 		{"MergeSort2", sort.Merge2},
 		{"ShellSort", sort.Shell},
 		// {"QuickSort", sort.Quick},
+		{"HeapSort", sort.Heap},
 	}
 
 	rand.Seed(1984)
@@ -51,7 +52,6 @@ func TestSorts(t *testing.T) {
 			t.Run(name, func(t *testing.T) {
 				// t.Parallel()
 
-				fmt.Println(name)
 				s.sort(nums)
 
 				if !isSorted(nums) {
