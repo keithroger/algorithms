@@ -10,7 +10,16 @@ func (h *MaxHeap) length() int {
     return len(*h)
 }
 
-// create constructor for new heap from array
+func NewHeap(arr []int) MaxHeap {
+    heap := MaxHeap(arr)
+
+    n := len(arr)
+    for i := n/2 - 1; i >= 0; i-- {
+        heap.sink(i)
+    }
+
+    return heap
+}
 
 func (heap *MaxHeap) Push(val int) {
     *heap = append(*heap, val)
@@ -24,8 +33,7 @@ func (heap *MaxHeap) Pop() int{
     heap.swap(0, lastIdx)
     *heap = (*heap)[:lastIdx]
 
-    heap.sink()
-    // TODO fix sink
+    heap.sink(0)
 
     return top
 }
@@ -41,8 +49,8 @@ func (heap *MaxHeap) swim() {
     }
 }
 
-func (heap *MaxHeap) sink() {
-    curr := 0
+func (heap *MaxHeap) sink(idx int) {
+    curr := idx
     largest := curr
     for curr < heap.length() {
         left, right := curr*2 + 1, curr*2 + 2
@@ -68,19 +76,23 @@ func (heap *MaxHeap) swap(a, b int) {
 
 func main() {
     data := []int{1, 3, 2, 4, 5, 6}
+    fmt.Println("Starting Data: ", data)
 
-    heap := MaxHeap{}
-    for _, datum := range data {
-        heap.Push(datum)
-    }
+    heap := NewHeap(data)
 
-    fmt.Println("Heap: ", heap)
+    fmt.Println("New Heap: ", heap)
 
     fmt.Println("Pop:", heap.Pop())
 
     fmt.Println("Heap: ", heap)
 
-    fmt.Println("Insert: 7")
+    fmt.Println("Push: 7")
     heap.Push(7)
     fmt.Println("Heap: ", heap)
+
+    fmt.Print("Pop All: " )
+    for heap.length() > 0 {
+        fmt.Print(heap.Pop())
+    }
+    fmt.Println()
 }
