@@ -1,11 +1,39 @@
-# Algorithms
+# Algorithms & Data Structures
+
+## Sort
+- [x] Heap Sort
+- [x] Insertion Sort
+- [x] Merge Sort
+- [x] Selection Sort
+- [x] Shell Sort
+- [ ] Quick Sort
 
 ## Search
+- [x] Binary Search
 
-### Insertion Sort
+## Graph
+- [x] Max Heap Tree
+- [ ] Kruskal’s Algorithm
+- [ ] Kahn’s Topological Sort Algorithm
 
-### Merge Sort
+### Search
+- [x] Breadth First Search
+- [x] Depth First Search
 
-### Shell Sort
+### Shortest Path
+- [ ] Dijkstra’s Algorithm
+- [ ] **Floyd Warshall Algorithm:** Finds the shortest path by comparing all
+    edges. Can handle negative values. Checks for cycles.
 
-### Quick Sort
+## String
+- [ ]
+
+## Other
+- [x] Linked List
+- [x] Queue
+- [x] Stack
+- [ ] Union–Find Algorithm
+- [ ] **Kadane’s Algorithm:** Finds the largest sum using a contiguous sub array.
+
+## Resources
+- https://www.techiedelight.com/top-25-algorithms-every-programmer-should-know/
