@@ -24,6 +24,7 @@
 - [ ] Dijkstra’s Algorithm
 - [ ] **Floyd Warshall Algorithm:** Finds the shortest path by comparing all
     edges. Can handle negative values. Checks for cycles.
+- [ ] **Bellman–Ford Algorithm:** Finds the shortest path for all edges. Checks for negative cycles.
 
 ## String
 - [ ]
