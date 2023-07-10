@@ -35,6 +35,7 @@
 - [x] Stack
 - [ ] Union–Find Algorithm
 - [ ] **Kadane’s Algorithm:** Finds the largest sum using a contiguous sub array.
+- [ ] **Priority Queue**
 
 ## Resources
 - https://www.techiedelight.com/top-25-algorithms-every-programmer-should-know/
