@@ -1,6 +1,6 @@
 package sort
 
-func Merge(arr []int) {
+func MergeSort(arr []int) {
 	msort(arr, 0, len(arr)-1)
 }
 
@@ -36,15 +36,15 @@ func merge(arr []int, lo, mid, hi int) {
 	}
 }
 
-func Merge2(arr []int) {
+func MergeSort2(arr []int) {
 	mid := len(arr) / 2
 
 	if len(arr) <= 1 {
 		return
 	}
 
-	Merge2(arr[:mid])
-	Merge2(arr[mid:])
+	MergeSort2(arr[:mid])
+	MergeSort2(arr[mid:])
 	merge2(arr)
 }
 

@@ -31,13 +31,13 @@ func TestSorts(t *testing.T) {
 		name string
 		sort func([]int)
 	}{
-		{"SelectionSort", sort.Selection},
-		{"InsertionSort", sort.Insertion},
-		{"MergeSort", sort.Merge},
-		{"MergeSort2", sort.Merge2},
-		{"ShellSort", sort.Shell},
+		{"SelectionSort", sort.SelectionSort},
+		{"InsertionSort", sort.InsertionSort},
+		{"MergeSort", sort.MergeSort},
+		{"MergeSort2", sort.MergeSort2},
+		{"ShellSort", sort.ShellSort},
 		// {"QuickSort", sort.Quick},
-		{"HeapSort", sort.Heap},
+		{"HeapSort", sort.HeapSort},
 	}
 
 	rand.Seed(1984)

@@ -1,6 +1,6 @@
 package sort
 
-func Heap(arr []int) {
+func HeapSort(arr []int) {
 	n := len(arr)
 
 	// Organize elements into a max heap

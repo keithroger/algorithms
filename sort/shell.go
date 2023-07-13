@@ -1,6 +1,6 @@
 package sort
 
-func Shell(arr []int) {
+func ShellSort(arr []int) {
 	h := 1
 	for h < len(arr)/3 {
 		h = 3*h + 1
