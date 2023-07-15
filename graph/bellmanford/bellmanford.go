@@ -29,7 +29,7 @@ func BellmanFord(g graph.Graph, startingVertex string) (map[string]int, error) {
 		}
 	}
 
-	// Iterate over vertices again to check for negative cycles.
+	// Iterate over vertices again to check for negative cycles. (Optional)
 	for i := 0; i < len(g.Vertices)-1; i++ {
 		for _, edge := range g.Edges {
 			// If negative cycle found return error

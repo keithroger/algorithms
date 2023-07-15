@@ -20,11 +20,13 @@
 - [x] Breadth First Search
 - [x] Depth First Search
 
-### Shortest Path
-- [ ] Dijkstra’s Algorithm
-- [ ] **Floyd Warshall Algorithm:** Finds the shortest path by comparing all
-    edges. Can handle negative values. Checks for cycles.
-- [ ] **Bellman–Ford Algorithm:** Finds the shortest path for all edges. Checks for negative cycles.
+### **Shortest Path**
+
+| Algorithm | Complexity | Description |
+| --- | --- | ---
+| **Dijkstra’s** | O(E*log(V)) | Shortest path from one vertex to all vertices. Requires positive weight values.
+| **Bellman–Ford** | O(V*E) | Finds the shortest path from one vertex to all vertices.
+| **Floyd Warshall** | O(V^3) | Shortest path between all vertices. Can handle negative values.
 
 ## String
 - [ ]
@@ -34,8 +36,9 @@
 - [x] Queue
 - [x] Stack
 - [ ] Union–Find Algorithm
-- [ ] **Kadane’s Algorithm:** Finds the largest sum using a contiguous sub array.
+- [ ] **Kadane’s Algorithm** Finds the largest sum using a contiguous sub array.
 - [ ] **Priority Queue**
+- [ ] **K-ary Heap**
 
 ## Resources
 - https://www.techiedelight.com/top-25-algorithms-every-programmer-should-know/
