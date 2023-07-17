@@ -24,7 +24,7 @@
 
 | Algorithm | Complexity | Description |
 | --- | --- | ---
-| **Dijkstra’s** | O(E*log(V)) | Shortest path from one vertex to all vertices. Requires positive weight values.
+| **Dijkstra’s** | O(E*log(V)) | Shortest path from one vertex to all vertices. Requires non-negative edge weights.
 | **Bellman–Ford** | O(V*E) | Finds the shortest path from one vertex to all vertices.
 | **Floyd Warshall** | O(V^3) | Shortest path between all vertices. Can handle negative values.
 
