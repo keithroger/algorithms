@@ -52,7 +52,7 @@ func (pq *PriorityQueue) Push(val int) {
 
 // swim puts the last entry in the priority queue into the correct position.
 func (pq *PriorityQueue) swim() {
-	currIdx := len(*pq)
+	currIdx := len(*pq) - 1
 	for currIdx > 0 {
 		parentIdx := (currIdx - 1) / 2
 
