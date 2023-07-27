@@ -3,7 +3,7 @@ package fixedsize
 import "fmt"
 
 // fixedsize returns the max sum of k contiguous values from arr.
-func fixedSize(arr []int, size int) int {
+func FixedSize(arr []int, size int) int {
 	// Get sum of the first k sized section
 	maxSum := sum(arr, 0, size+1)
 	currSum := maxSum
